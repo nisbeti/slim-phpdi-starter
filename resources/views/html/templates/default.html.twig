@@ -1,0 +1,57 @@
+<!doctype html>
+<html class="no-js" lang="en" dir="ltr">
+  <head>
+    <title>Website | {{ title|striptags }}</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="{{ globals.cdn }}/favicon.ico" >
+{% block style_header %}
+    <link rel="stylesheet" type="text/css" href="{{ globals.css }}/app.css" />
+{% endblock %}
+{% block script_header %}
+    <script src="{{ globals.js }}/modernizr.js"></script>
+{% endblock %}
+    <meta name="description" content="Another Starter Project">
+  </head>
+  <body>
+
+    <nav class="nav">
+    {% block body_nav %}
+    {% endblock %}
+    </nav>
+
+    <header class="header">
+    {% block body_header %}
+      <h2>{{ title }}</h2>
+      <!-- Callouts Section -->
+      {% include 'templates/partials/callouts.html.twig' %}
+    {% endblock %}
+    </header>
+
+    <main class="main">
+    {% block body_content %}
+    {% endblock %}
+    </main>
+
+    <footer class="footer">
+    {% block body_footer %}
+    {% endblock %}
+    </footer>
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="{{ globals.js }}/fastclick.js"></script>
+    <script src="{{ globals.js }}/app.js"></script>
+    <script>
+      $(document).ready(function(){
+
+        $(".close").click(function() {
+          $(this).parent().slideUp(400, function(){
+            $(this).remove()
+          });
+        });
+
+      });
+    </script>
+{% block script_footer %}{% endblock %}

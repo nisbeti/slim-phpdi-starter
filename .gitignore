@@ -1,0 +1,9 @@
+vendor
+.DS_Store
+node_modules
+bower_components
+secrets
+secrets.json
+dev_secrets.json
+phpunit.phar
+tests/_output/*

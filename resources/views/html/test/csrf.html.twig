@@ -1,0 +1,11 @@
+{% extends 'templates/default.html.twig' %}
+
+{% set title %}Test CSRF{% endset %}
+
+{% block body_content %}
+<form action="{{ path_for('test.csrf.post') }}" method="post">
+    <input type="text" name="test">
+    <input type="submit">
+    {{ csrf.html | raw }}
+</form>
+{% endblock %}

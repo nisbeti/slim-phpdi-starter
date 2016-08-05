@@ -1,0 +1,12 @@
+{% extends 'templates/default.html.twig' %}
+
+{% set title %}Home{% endset %}
+
+{% block body_content %}
+  <div class="">
+    <h2>Main Section One</h2>
+    <p>{{ someParam }}</p>
+    <p><a href="{{ path_for('test.csrf') }}">Test CSRF</a></p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur eu arcu ut tellus efficitur molestie. Fusce quis vestibulum nisl. Maecenas sodales, ipsum in dignissim sollicitudin, odio magna volutpat turpis, at lacinia leo nunc sed metus. Vivamus sit amet mauris a sapien ornare ullamcorper a non elit. Vestibulum tellus massa, iaculis quis lectus et, elementum interdum massa. Vivamus et dolor ligula. Duis sed vestibulum ipsum.</p>
+  </div>
+{% endblock %}

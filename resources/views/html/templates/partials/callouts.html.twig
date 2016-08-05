@@ -1,0 +1,18 @@
+{% if flash.getMessage('global') %}
+  <div class="callout primary">
+    <a href="#" class="close">&times;</a>
+    {{ flash.getMessage('global')|first|raw }}
+  </div>
+{% endif %}
+{% if flash.getMessage('warning') %}
+  <div class="callout warning">
+    <a href="#" class="close">&times;</a>
+    {{ flash.getMessage('warning')|first|raw }}
+  </div>
+{% endif %}
+{% if flash.getMessage('alert') %}
+  <div class="callout alert">
+    <a href="#" class="close">&times;</a>
+    {{ flash.getMessage('alert')|first|raw }}
+  </div>
+{% endif %}
