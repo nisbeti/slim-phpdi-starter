@@ -19,7 +19,7 @@ use App\Interfaces\ViewInterface as View;
 use App\Helpers\RenderView;
 // use Noodlehaus\ConfigInterface as Config;
 // use App\Interfaces\Helpers\SessionInterface as Session;
-// use App\Interfaces\Database\DatabaseInterface as DB;
+use App\Interfaces\Database\DatabaseInterface as DB;
 use App\Interfaces\Helpers\FlashInterface as Flash;
 // use Psr\Log\LoggerInterface as Logger;
 
@@ -40,16 +40,20 @@ class GetHome
         Request $request,
         Response $response,
         View $view,
+        DB $db,
         Flash $flash
     ) {
         /* get input */
 
         /* do action */
+        $user = $db->table('users')->first();
+        $username = $user->username;
+
         $flash->addMessage('global', 'This is a flash message.');
 
         /* route away */
         return new RenderView($request, $response, $view, 'home', [
-            'someParam' => 'This is a Param',
+            'someParam' => $username . ' was returned from the db.',
         ]);
     }
 }
