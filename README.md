@@ -19,3 +19,29 @@ from within your project folder, then the url will be
 If using Apache on your dev machine, then the defaul url for the project will be something like
 
 <a href="http://localhost/slim-phpdi-starter/public/index.php">http://localhost/slim-phpdi-starter/public/index.php</a>
+
+The config.php file pulls in some keys and other details from a local json file, in the directory secrets/dev_secrets.json
+
+```json
+{
+  "CUSTOM": {
+  },
+  "MYSQL": {
+    "DATABASE": "db",
+    "HOST": "127.0.0.1",
+    "PASSWORD": "root",
+    "PORT": "3306",
+    "TUNNEL": "",
+    "USER": "root"
+  },
+  "DEV": {
+    "app.base_path": "/test/public/index.php",
+    "app.cdn": "http://localhost",
+    "app.css": "/test/public/css",
+    "app.js": "/test/public/js",
+    "app.images": "/test/public/img",
+    "logger.name": "test",
+    "logger.path": "../../logs/test.log"
+  }
+}
+```
