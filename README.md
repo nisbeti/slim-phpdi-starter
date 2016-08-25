@@ -22,6 +22,8 @@ If using Apache on your dev machine, then the defaul url for the project will be
 
 The config.php file pulls in some keys and other details from a local json file, in the directory secrets/dev_secrets.json
 
+If you are using mySql database, then it might look something like this.
+
 ```json
 {
   "CUSTOM": {
