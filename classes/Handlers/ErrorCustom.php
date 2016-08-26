@@ -51,15 +51,9 @@ class ErrorCustom extends \Slim\Handlers\Error
 
         $message = 'Slim Application Error:' . PHP_EOL;
         $message .= $this->renderThrowableAsText($throwable);
-        
-        $errorCount = 0;
-        while ($error = $throwable->getPrevious()) {
+        while ($throwable = $throwable->getPrevious()) {
             $message .= PHP_EOL . 'Previous error:' . PHP_EOL;
             $message .= $this->renderThrowableAsText($throwable);
-            $errorCount ++ ;
-            if ($errorCount > 2) {
-                break;
-            }
         }
 
         $message .= PHP_EOL . 'View in rendered output by enabling the "displayErrorDetails" setting.' . PHP_EOL;
