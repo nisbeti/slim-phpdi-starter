@@ -47,3 +47,7 @@ If you are using mySql database, then it might look something like this.
   }
 }
 ```
+
+The dev_secrets.json file included in the project is just a sample. You should not include it in source control, so your .gitignore file will need the line ```dev_secrets.json``` added.
+
+There is a simple video of how the sample project should work at <a href="http://somup.com/cDXu62JCm">http://somup.com/cDXu62JCm</a>
